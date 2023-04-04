@@ -1,0 +1,116 @@
+<html>
+<head>
+	<title> List of sample NBIs: Proof of Concept</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #F5F5F5;
+			margin: 0;
+			padding: 0;
+		}
+		h1, h3 {
+			color: #1E90FF;
+			text-align: center;
+			margin: 30px 0;
+		}
+		table {
+			width: 80%;
+			margin: 0 auto;
+			border-collapse: collapse;
+			box-shadow: 0px 0px 10px #888888;
+			background-color: #FFFFFF;
+		}
+		th {
+			background-color: #1E90FF;
+			color: #FFFFFF;
+			font-weight: bold;
+			padding: 10px;
+			text-align: center;
+			border: 1px solid #1E90FF;
+		}
+		td {
+			padding: 10px;
+			text-align: center;
+			border: 1px solid #1E90FF;
+		}
+		tr:nth-child(even) {
+			background-color: #F5F5F5;
+		}
+		tr:hover {
+			background-color: #E6E6FA;
+		}
+		.copy-button {
+			display: block;
+			margin: 30px auto 0;
+			padding: 10px;
+			background-color: #1E90FF;
+			color: #FFFFFF;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		function copyTable() {
+			var table = document.getElementById("nbi-table");
+			var range = document.createRange();
+			range.selectNode(table);
+			window.getSelection().removeAllRanges();
+			window.getSelection().addRange(range);
+			document.execCommand("copy");
+			window.getSelection().removeAllRanges();
+			alert("Table data copied to clipboard!");
+		}
+	</script>
+</head>
+<body>
+	<h1>List of sample NBIs: Proof of Concept</h1>
+	<h3><center>by 3V3RYONE</center></h3>
+	<table id="nbi-table">
+		<thead>
+			<tr>
+				<th>Process ID</th>
+				<th>Hostname</th>
+				<th>IP Address</th>
+				<th>HTTP URI</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>3462</td>
+				<td>evil_server.com</td>
+				<td>192.168.1.10</td>
+				<td>/update.exe</td>
+			</tr>
+			<tr>
+				<td>2387</td>
+				<td>mal_server.com</td>
+				<td>10.10.1.5</td>
+				<td>/banner.php</td>
+			</tr>
+			<tr>
+				<td>2779</td>
+				<td>evil_server.com</td>
+				<td>192.168.0.20</td>
+				<td>/send_data.php</td>
+			</tr>
+			<tr>
+				<td>3133</td>
+				<td>local_network</td>
+				<td>192.168.1.5</td>
+				<td>N/A</td>
+			</tr>
+			<tr>
+				<td>2923</td>
+				<td>mal_server.com</td>
+				<td>10.10.1.2</td>
+				<td>N/A</td>
+			</tr>
+		</tbody>
+	</table>
+	<button class="copy-button" onclick="copyTable()">Copy table data</button> 
+	<br />
+	<br />
+	<center><a href="graph.html">Click here to see the communication graph</a></center>
+</body>
+</html>
